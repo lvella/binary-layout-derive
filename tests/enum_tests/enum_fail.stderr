@@ -1,0 +1,9 @@
+error[E0277]: the trait bound `MyBadEnum: From<u32>` is not satisfied
+ --> tests/enum_tests/enum_fail.rs:3:10
+  |
+3 | #[derive(LayoutAsEnumRepr)]
+  |          ^^^^^^^^^^^^^^^^ the trait `From<u32>` is not implemented for `MyBadEnum`
+  |
+  = note: required for `u32` to implement `Into<MyBadEnum>`
+  = note: required for `MyBadEnum` to implement `TryFrom<u32>`
+  = note: this error originates in the derive macro `LayoutAsEnumRepr` (in Nightly builds, run with -Z macro-backtrace for more info)
